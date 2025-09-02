@@ -29,7 +29,7 @@ const files = {
   'src/utils/helpers.ts': 'export function help() {}',
   'src/components/Button.tsx': 'export const Button = () => {}',
   'package.json': '{"name": "my-app"}',
-  'README.md': '# My App'
+  'README.md': '# My App',
 };
 
 const tree = convertFilesToTreeItems(files);
@@ -55,9 +55,11 @@ console.log(tree);
 Converts a flat object of file paths to a hierarchical tree structure.
 
 **Parameters:**
+
 - `files` (FilesObject): An object where keys are file paths and values are file contents (contents are used for sorting but not included in output)
 
 **Returns:**
+
 - `TreeItem[]`: An array representing the tree structure
 
 ### Types
@@ -82,7 +84,7 @@ import { convertFilesToTreeItems } from 'files-to-tree';
 const files = {
   'index.html': '<html>...</html>',
   'styles.css': 'body { margin: 0; }',
-  'script.js': 'console.log("Hello");'
+  'script.js': 'console.log("Hello");',
 };
 
 const tree = convertFilesToTreeItems(files);
@@ -98,7 +100,7 @@ const files = {
   'src/components/Footer/Footer.tsx': 'component',
   'src/utils/api.ts': 'api functions',
   'public/favicon.ico': 'icon',
-  'package.json': 'manifest'
+  'package.json': 'manifest',
 };
 
 const tree = convertFilesToTreeItems(files);
@@ -174,11 +176,20 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## License
 
-MIT © [Your Name]
+MIT © [KlyneChrysler]
 
 ## Changelog
 
+### 2.0.0
+
+- **BREAKING**: Fixed TypeScript compilation issues with strict mode
+- Improved error handling and type safety
+- Better handling of edge cases (empty paths, undefined values)
+- Enhanced sorting algorithm for consistent output
+- Full TypeScript declaration file generation
+
 ### 1.0.0
+
 - Initial release
 - Basic file-to-tree conversion functionality
 - TypeScript support
